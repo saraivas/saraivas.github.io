@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <title></title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="./assets/css/stule.css" rel="stylesheet">
+</head>
+
+<body>
+    <header>
+        <h1>Escola Virtual</h1>
+        <h2>Formulário de Pré-Matrícula</h2>
+        <div class="linha"></div>
+    </header>
+
+    <section>
+        <div class="ddp">
+            <h3>Dados pessoais:</h3>
+            <table>
+
+                <tbody>
+                    <tr>
+                        <td>Nome do aluno:</td>
+                        <td>
+                            <form>
+                                <input type="text" name="usuario" value="Nome completo">
+                            </form>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>Nascimento:</td>
+                        <td>
+                            <form>
+                                <input type="date" name="data" value="dd/mm/aaaa">
+                            </form>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>Nome da Mãe:</td>
+                        <td>
+                            <form>
+                                <input type="text" name="usuario" value="Nome completo">
+                            </form>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>Nome do Pai:</td>
+                        <td>
+                            <form>
+                                <input type="text" name="usuario" value="Nome completo">
+                            </form>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>DDD + Telefone:</td>
+                        <td>
+                            <form>
+                                <input type="text" name="usuario" value="51 9 9999 9999">
+                            </form>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            E-mail:
+                        </td>
+                        <td>
+                            <form>
+                                <input type="email" name="usuario" value="exemplo@gmail.com">
+                            </form>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+
+        </div>
+
+        <div class="ifm">
+            <h3>Informações de Matrícula:</h3>
+
+            <div class="dados">
+                <div class="esq">
+                    Série:
+                    <select name="Série">
+                        <option value="pré">Pré-escolar</option>
+                        <option value="funda">Ensino Fundaental</option>
+                        <option value="medio" selected>Ensino Médio</option>
+                        <option value="medio" selected>Superior</option>
+                    </select>
+                </div>
+                <div class="meio">
+                    <p> Turno:<br />
+                        <input type="radio" name="turno" value="manhã"> Manhã
+                        <br>
+                        <input type="radio" name="turno" value="tarde"> Tarde
+                        <br>
+                    </p>
+                </div>
+                <div class="dir">
+                    <p>Atividades Extracurriculares:<br />
+                        <input type="checkbox" name="inf">Informática<br>
+                        <input type="checkbox" name="mus">Música<br>
+                        <input type="checkbox" name="bal">Balet<br>
+                        <input type="checkbox" name="pin">Pintura<br>
+                        <input type="checkbox" name="jud">Judô<br>
+                        <input type="checkbox" name="fut">Futebol<br>
+                    </p>
+                </div>
+            </div>
+        </div>
+
+    </section>
+    <div class="linha"></div><br>
+
+    <div class="bot">
+        <input type="submit" value="Enciar Formulário"><input type="submit" value="Limpar Campos">
+    </div>
+
+
+</body>
+
+</html>
