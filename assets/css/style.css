@@ -182,19 +182,23 @@ main .trabalhos h2 {
 }
 
 main .trabalhos .link-trab {
-    display: flex;
     margin: 25px;
-    flex-wrap: wrap;
     justify-content: center;
-    flex-direction: row;
 }
 
-main .trabalhos .link-trab a {
+main .trabalhos .link-trab ul li {
     font-size: 20px;
-    font-weight: bold;
-    padding: 5px;
-    border-radius: 5px;
-    margin: 5px;
+    display: inline-block;
+    padding-right: 4px;
+    text-decoration: dotted;
+    width: 230px;
+    padding-top: 15px;
+    padding-left: 10px;
+    justify-content: center;
+    color: var(--corTextPrimaria);
+}
+
+main .trabalhos .link-trab ul li a {
     color: var(--corTextPrimaria);
     text-decoration: underline;
 }
