@@ -23,7 +23,7 @@ nav {
 
 .logo {
     color: white;
-    font-size: 24px;
+    font-size: 34px;
     font-weight: bold;
 }
 
@@ -91,9 +91,22 @@ nav {
     text-align: center;
 }
 
-.sobre1 svg {
-    width: 60px;
-    height: 60px;
+.balao {
+    border: solid 5px black;
+    width: 100px;
+    height: 100px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    background-color: #00A6FF;
+    border-radius: 100px;
+}
+
+.sobre1 .balao svg {
+    width: 50px;
+    height: 50px;
+    color: white;
 }
 
 .sobre1 {
@@ -103,4 +116,86 @@ nav {
     justify-content: center;
     align-items: center;
     margin: 40px 20px 0 20px;
+}
+
+.title p {
+    font-size: 35px;
+    text-align: center;
+    margin-bottom: 0px;
+}
+
+.local-cards {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+.card {
+    width: 250px;
+    height: 350px;
+    background: rgb(236, 236, 236);
+    margin: 25px;
+    position: relative;
+    flex-wrap: wrap;
+    flex-direction: row;
+    justify-content: center;
+    display: flex;
+    box-shadow: rgb(126, 122, 122) 2px 2px 1px;
+}
+
+.card .imagem {
+    height: 230px;
+    background: rgb(236, 236, 236);
+    width: 250px;
+}
+
+.card .imagem .sale {
+    position: absolute;
+    left: 0;
+    top: 15px;
+    background: red;
+    border-radius: 0px 8px 8px 0px;
+    padding: 5px 10px;
+}
+
+.card .imagem .sale p {
+    padding: 1px;
+    text-align: center;
+    font-weight: bold;
+    color: white;
+    font-size: 15px;
+    margin-top: 10px;
+}
+
+.card .info-card {
+    flex-wrap: wrap;
+    flex-direction: row;
+    justify-content: center;
+    display: flex;
+    align-items: center;
+}
+
+.card .info-card h3,
+p {
+    margin: 5px;
+    text-align: center;
+}
+
+.card button {
+    margin-bottom: 15px;
+    background-color: #00A6FF;
+    color: white;
+    border: solid 2px black;
+    border-radius: 5px;
+    padding: 2px;
+    font-size: 15px;
+    font-weight: bold;
+}
+
+.card .imagem .img-card {
+    width: 250px;
+    height: 200px;
+    object-fit: cover;
 }
