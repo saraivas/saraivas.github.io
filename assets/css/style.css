@@ -190,11 +190,9 @@ main .trabalhos .link-trab ul li {
     font-size: 20px;
     display: inline-block;
     padding-right: 4px;
-    text-decoration: dotted;
     width: 230px;
     padding-top: 15px;
     padding-left: 10px;
-    justify-content: center;
     color: var(--corTextPrimaria);
 }
 
