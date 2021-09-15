@@ -156,7 +156,12 @@ nav ul a svg {
         padding: 0 30px;
     }
     nav {
+        width: 100%;
         padding: 15px;
+        position: fixed;
+        bottom: 0;
+        height: fit-content;
+        top: unset;
     }
     nav ul a {
         font-size: 12px;
@@ -165,4 +170,8 @@ nav ul a svg {
         display: block;
         margin: 0 auto 10px;
     }
+}
+
+section {
+    height: 2000px;
 }
