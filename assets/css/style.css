@@ -153,6 +153,47 @@ nav ul a svg {
     transform: rotate(-3.3deg);
 }
 
+.services {
+    text-align: center;
+    margin: 150px 0;
+    padding: 100px;
+}
+
+.services-container {
+    display: flex;
+    margin-top: 60px;
+    justify-content: space-between;
+    max-width: 1200px;
+    margin: 60px auto 0;
+}
+
+.services .services-container .services-card {
+    background: #2f3034;
+    border-radius: 16px;
+    border: 1px solid var(--purple);
+    padding: 40px 25px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 360px;
+}
+
+.services-container .services-card svg {
+    stroke: var(--green);
+    width: 90px;
+    height: 30px;
+    background: var(--bg-dark);
+    border-radius: 50px;
+    box-sizing: content-box;
+    padding: 10px;
+    margin-bottom: 40px;
+}
+
+.services-card+.services-card {
+    margin-left: 10px;
+}
+
 
 /*RESPONSIVE*/
 
