@@ -108,6 +108,10 @@ nav ul a {
     color: #15cdcb;
 }
 
+nav ul a svg {
+    display: none;
+}
+
 
 /*RESPONSIVE*/
 
@@ -150,5 +154,15 @@ nav ul a {
 @media(max-width:480px) {
     header .container {
         padding: 0 30px;
+    }
+    nav {
+        padding: 15px;
+    }
+    nav ul a {
+        font-size: 12px;
+    }
+    nav ul a svg {
+        display: block;
+        margin: 0 auto 10px;
     }
 }
