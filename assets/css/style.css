@@ -129,10 +129,26 @@ nav ul a svg {
 .about-me .img-container {
     width: 50%;
     text-align: center;
+    position: relative;
 }
 
 .about-me .img-container img {
     width: 70%;
+    height: 100%;
+}
+
+.about-me .img-container .line {
+    width: calc(70% + 50px);
+    height: calc(100% + 50px);
+    border: 3px solid var(--purple);
+    position: absolute;
+    top: -25px;
+    left: calc(50% - 70%/2 - 25px);
+}
+
+.about-me .img-container .line.green {
+    border: 3px solid var(--green);
+    transform: rotate(-3.3deg);
 }
 
 
