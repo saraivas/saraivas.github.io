@@ -54,7 +54,7 @@ button {
 }
 
 header {
-    height: calc(100vh - 65px);
+    height: calc(100vh - 85px);
     display: flex;
     align-items: center;
 }
@@ -71,4 +71,26 @@ header .container h1 {
 
 header .container button {
     margin-top: 40px;
+}
+
+nav .img {
+    border-left: 7px solid #5280E2;
+    padding: 0 0 0 10px;
+}
+
+nav {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 100px;
+    position: sticky;
+    top: 0;
+    background: var(--bg-dark);
+}
+
+nav ul a {
+    text-decoration: none;
+    font-size: 30px;
+    color: #15cdcb;
+    margin: 0 35px;
 }
