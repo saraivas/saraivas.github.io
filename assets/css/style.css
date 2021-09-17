@@ -1,5 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap');
-:root {
+ :root {
     --purple: #5280E2;
     --green: #15cdcb;
     --bg-dark: #212226;
@@ -153,33 +153,7 @@ nav ul a svg {
     transform: rotate(-3.3deg);
 }
 
-.services {
-    text-align: center;
-    margin: 150px 0;
-    padding: 100px;
-}
-
-.services-container {
-    display: flex;
-    margin-top: 60px;
-    justify-content: space-between;
-    max-width: 1200px;
-    margin: 60px auto 0;
-}
-
-.services .services-container .services-card {
-    background: #2f3034;
-    border-radius: 16px;
-    border: 1px solid var(--purple);
-    padding: 40px 25px;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    align-items: center;
-    max-width: 360px;
-}
-
-.services-container .services-card svg {
+.services-container .service-card svg {
     stroke: var(--green);
     width: 90px;
     height: 30px;
@@ -190,22 +164,106 @@ nav ul a svg {
     margin-bottom: 40px;
 }
 
-.services-card+.services-card {
+.services {
+    text-align: center;
+    margin: 150px 0;
+    padding: 0 100px;
+}
+
+.services-container,
+.portfolio-container {
+    display: flex;
+    justify-content: space-between;
+    max-width: 1200px;
+    margin: 60px auto 0;
+}
+
+.services .services-container .service-card {
+    max-width: 360px;
+    background: #2F3034;
+    border: 1px solid var(--purple);
+    border-radius: 16px;
+    padding: 40px 25px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    text-align: center;
+}
+
+.services .services-container .service-card img {
+    margin-bottom: 40px;
+    width: 90px;
+}
+
+.service-card+.service-card {
     margin-left: 10px;
 }
 
+.portfolio {
+    padding: 0 100px;
+    margin-bottom: 100px;
+    text-align: center;
+    background: url('../img/portfolio-bg.png');
+}
 
-/*RESPONSIVE*/
+.portfolio .portfolio-container .portfolio-card {
+    background: radial-gradient(100% 100% at 0% 0%, rgba(255, 255, 255, 0.33) 0%, rgba(255, 255, 255, 0) 100%);
+    box-shadow: 0px 4px 24px -1px rgba(0, 0, 0, 0.1);
+    backdrop-filter: blur(42px);
+    border: 1px solid white;
+    border-radius: 16px;
+    max-width: 360px;
+    text-align: left;
+    padding: 50px 25px;
+}
+
+.portfolio .portfolio-container .portfolio-card .img-container {
+    margin: 0 25px 50px;
+}
+
+.portfolio .portfolio-container .portfolio-card .img-container img {
+    width: 100%;
+}
+
+.portfolio .portfolio-container .portfolio-card .language-container {
+    margin-bottom: 20px;
+}
+
+.portfolio .portfolio-container .portfolio-card .language-container ul {
+    display: flex;
+    list-style: none;
+    padding: 0;
+}
+
+.portfolio .portfolio-container .portfolio-card .language-container ul li {
+    color: var(--green);
+    border: 1px solid var(--green);
+    border-radius: 16px;
+    padding: 3px 15px;
+}
+
+.portfolio-card .language-container ul li+li {
+    margin-left: 10px;
+}
+
+.portfolio-card+.portfolio-card {
+    margin-left: 10px;
+}
+
+p {
+    margin: 0;
+}
 
 
-/*tablet*/
+/*  RESPONSIVIDADE */
 
-@media(max-width: 1000px) {
+
+/* small desktops */
+
+@media (max-width: 1000px) {
     header .container {
         width: 100%;
-    }
-    nav .img {
-        display: none;
     }
     nav ul a {
         font-size: 18px;
@@ -234,24 +292,28 @@ nav ul a svg {
         flex-direction: column;
         align-items: center;
     }
-    .services-card {
+    .service-card {
         height: 394px;
     }
-    .services-card+.services-card {
-        margin: 0;
+    .service-card+.service-card {
+        margin-left: 0;
         margin-top: 30px;
     }
 }
 
-@media(max-width: 767px) {
-    header .container .img {
-        border-left: 7px solid #5280E2;
-        padding: 0 0 0 10px;
-        display: block;
+
+/* tablet */
+
+@media (max-width: 767px) {
+    header .container img {
+        display: inline;
         margin-bottom: 70px;
     }
-    nav .img {
+    nav img {
         display: none;
+    }
+    nav ul {
+        padding: 0;
     }
     nav ul a {
         font-size: 16px;
@@ -259,19 +321,18 @@ nav ul a svg {
 }
 
 
-/*CELULAR*/
+/* celular */
 
-@media(max-width:480px) {
+@media (max-width: 480px) {
     header .container {
-        padding: 0 30px;
+        padding: 0 40px;
     }
     nav {
-        width: 100%;
-        padding: 15px;
         position: fixed;
+        width: 100%;
         bottom: 0;
-        height: fit-content;
         top: unset;
+        padding: 0 15px;
     }
     nav ul a {
         font-size: 12px;
