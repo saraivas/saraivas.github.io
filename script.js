@@ -1,7 +1,7 @@
 let count =1;
 
 let projectsJson = [
-    {description:'Descrição1 da pizza em mais de uma linha muito legal bem interessante', language:['HTML','CSS','JS','R'], porcent:['25%', '50%', '75%', '100%'], pag:'1Em breve', link:' ', mobile:'1Não disponivel'},
+    {description:'Descrição11 da pizza em mais de uma linha muito legal bem interessante', language:['HTML','CSS','JS','R'], porcent:['25%', '50%', '75%', '100%'], pag:'1Em breve', link:' ', mobile:'1Não disponivel'},
     {description:'Descrição2 da pizza em mais de uma linha muito legal bem interessante', language:['HTML','CSS','JS','R'], porcent:['25%', '50%', '75%', '100%'], pag:'2Em breve', link:' ', mobile:'2Não disponivel'},
     {description:'Descrição3 da pizza em mais de uma linha muito legal bem interessante', language:['HTML','CSS','JS','R'], porcent:['25%', '50%', '75%', '100%'], pag:'3Em breve', link:' ', mobile:'3Não disponivel'},
     {description:'Descrição4 da pizza em mais de uma linha muito legal bem interessante', language:['HTML','CSS','JS','R'], porcent:['25%', '50%', '75%', '100%'], pag:'4Em breve', link:' ', mobile:'4Não disponivel'}
