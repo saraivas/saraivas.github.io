@@ -44,6 +44,7 @@ function nextImage(){
     document.getElementById("js").innerHTML = projectsJson[count-1].language[2]+'<p class="margem">'+projectsJson[count-1].porcent[2]+'</p>';
     document.getElementById("r").innerHTML = projectsJson[count-1].language[3]+'<p class="margem">'+projectsJson[count-1].porcent[3]+'</p>';
     document.getElementById("link").innerHTML = projectsJson[count-1].pag;
+    document.getElementById("link").href = projectsJson[count-1].local;
     document.getElementById("mobile").innerHTML = projectsJson[count-1].mobile;
 
 
@@ -53,13 +54,14 @@ let el = document.getElementById("manual");
     el.addEventListener('click', function(e){
         count = parseInt(e.target.id);
         document.getElementById('slide'+count).checked = true
-        document.getElementById("descricao").innerHTML = projectsJson[count-1].description;
-        document.getElementById("html").innerHTML = projectsJson[count-1].language[0]+'<p class="margem">'+projectsJson[count-1].porcent[0]+'</p>';
-        document.getElementById("css").innerHTML = projectsJson[count-1].language[1]+'<p class="margem">'+projectsJson[count-1].porcent[1]+'</p>';
-        document.getElementById("js").innerHTML = projectsJson[count-1].language[2]+'<p class="margem">'+projectsJson[count-1].porcent[2]+'</p>';
-        document.getElementById("r").innerHTML = projectsJson[count-1].language[3]+'<p class="margem">'+projectsJson[count-1].porcent[3]+'</p>';
-        document.getElementById("link").innerHTML = projectsJson[count-1].pag;
-        document.getElementById("mobile").innerHTML = projectsJson[count-1].mobile;
+    document.getElementById("descricao").innerHTML = projectsJson[count-1].description;
+    document.getElementById("html").innerHTML = projectsJson[count-1].language[0]+'<p class="margem">'+projectsJson[count-1].porcent[0]+'</p>';
+    document.getElementById("css").innerHTML = projectsJson[count-1].language[1]+'<p class="margem">'+projectsJson[count-1].porcent[1]+'</p>';
+    document.getElementById("js").innerHTML = projectsJson[count-1].language[2]+'<p class="margem">'+projectsJson[count-1].porcent[2]+'</p>';
+    document.getElementById("r").innerHTML = projectsJson[count-1].language[3]+'<p class="margem">'+projectsJson[count-1].porcent[3]+'</p>';
+    document.getElementById("link").innerHTML = projectsJson[count-1].pag;
+    document.getElementById("link").href = projectsJson[count-1].local;
+    document.getElementById("mobile").innerHTML = projectsJson[count-1].mobile;
     });
 
 
