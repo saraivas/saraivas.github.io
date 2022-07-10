@@ -1,0 +1,334 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,500;1,400&display=swap');
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    font-family: 'Montserrat', sans-serif;
+}
+
+ul {
+    list-style: none;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+button {
+    padding: 10px 15px;
+    border-radius: 8px;
+    font-weight: bold;
+    border: 0;
+    background: #1d61dd;
+    color: white;
+    font-family: 'Montserrat', sans-serif;
+}
+
+header {
+    height: calc(100vh - 200px);
+    background: no-repeat center/cover url("assets/headerImg.jpg");
+}
+
+header nav {
+    display: flex;
+    justify-content: space-between;
+    margin: auto 60px;
+}
+
+header nav p {
+    font-weight: bold;
+}
+
+header nav ul {
+    list-style: none;
+    display: flex;
+}
+
+header nav ul li {
+    margin: 0 15px;
+}
+
+.header-content {
+    max-width: 400px;
+    margin: 150px auto;
+    text-align: center;
+}
+
+.header-content h1 {
+    margin-bottom: 10px;
+    font-size: 4rem;
+}
+
+.pacotes {
+    background: #e5e5e5;
+    padding: 15px;
+}
+
+.pacotes .pacotes-cards {
+    display: flex;
+    max-width: 950px;
+    margin: 25px;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.pacotes .pacotes-title {
+    width: 100%;
+    margin: 25px 0;
+    text-align: center;
+}
+
+.pacotes .card {
+    width: 250px;
+    height: 350px;
+    background: white;
+    border-radius: 24px 0px;
+    margin: 25px;
+    position: relative;
+}
+
+.pacotes .card-image {
+    width: 250px;
+    height: 200px;
+    border-radius: 24px 0 0 0;
+    object-fit: cover;
+}
+
+.card-content {
+    padding: 0 15px;
+}
+
+.pacotes .card-content ul {
+    display: flex;
+    flex-direction: column;
+    list-style: none;
+    padding: 0;
+}
+
+.pacotes .card-content ul li {
+    font-size: 0.6rem;
+    display: flex;
+    align-items: center;
+    margin: 3px 0;
+    color: gray;
+    font-weight: bold;
+}
+
+.pacotes .card-content li svg {
+    width: 16px;
+    height: 16px;
+    margin-right: 10px;
+}
+
+.pacotes .card-content h1 {
+    font-size: 1rem;
+}
+
+.pacotes .card .card-tag-top {
+    position: absolute;
+    right: 0;
+    top: 15px;
+    background: #f19b39;
+    border-radius: 8px 0 0 8px;
+    padding: 5px 10px;
+}
+
+.pacotes .card .card-tag-bottom {
+    position: absolute;
+    left: 0;
+    top: 160px;
+    background: #1d61dd;
+    border-radius: 0 8px 8px 0;
+    padding: 5px 10px;
+}
+
+.pacotes .card .card-tag p {
+    margin: 0;
+    font-size: .8rem;
+    color: white;
+    font-weight: bold;
+}
+
+.serviços {
+    padding: 15px;
+}
+
+.serviços .serviços-title {
+    text-align: center;
+    padding-top: 35px 0;
+}
+
+.serviços .serviços-card {
+    margin-top: 25px;
+    display: flex;
+    max-width: 950px;
+    justify-content: center;
+    margin: auto;
+    flex-wrap: wrap;
+}
+
+.serviços .card {
+    width: 250px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin: 0 20px;
+}
+
+.serviços .card svg {
+    width: 60px;
+    height: 60px;
+    margin: 30px 0;
+    transition: all 1s;
+}
+
+.serviços .card svg:hover {
+    stroke: #1d61dd;
+    transform: scale(1.1);
+}
+
+.serviços .card h3 {
+    font-weight: bold;
+}
+
+.serviços .card p {
+    color: gray;
+    font-size: .8rem;
+    text-align: center;
+}
+
+.serviços .card .card-content {
+    height: 180px;
+    text-align: center;
+}
+
+.serviços button {
+    background-color: #1d61dd;
+}
+
+#map {
+    height: 400px;
+    width: 100%;
+}
+
+.contato {
+    padding: 60px;
+    background: #e5e5e5;
+    position: relative;
+}
+
+.contato .contato-card {
+    width: 350px;
+    height: 300px;
+    background: white;
+    position: absolute;
+    z-index: 99;
+    top: calc(50% - 150px);
+    left: calc(20% - 175px);
+    border-radius: 8px;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    box-shadow: 0 1px 6px 0 rgba(32, 33, 36, .28);
+}
+
+.contato .contato-card h1 {
+    padding-left: 50px;
+    text-align: left;
+}
+
+.contato .contato-card li {
+    font-size: .8rem;
+    font-weight: bold;
+    color: gray;
+    display: flex;
+    align-items: center;
+}
+
+.contato .contato-card li svg {
+    width: 16px;
+    margin-right: 10px;
+    margin: 10px;
+}
+
+
+/* RESPONSIVIDADE */
+
+
+/* especial MAP */
+
+@media (max-width: 950px) {
+    .contato {
+        padding: 60px 0;
+    }
+    .contato-card .contato-card {
+        left: 40px;
+    }
+}
+
+
+/* phones to portrait tablet */
+
+@media (max-width: 800px) {
+    .contato {
+        padding: 30px 0;
+    }
+    .contato .contato-card {
+        position: static;
+        margin: 20px auto;
+    }
+}
+
+
+/* phones to portrait tablet */
+
+@media (max-width: 767px) {}
+
+
+/* phones and down */
+
+@media (max-width: 480px) {
+    body {
+        margin-bottom: 55px;
+    }
+    header nav ul {
+        position: fixed;
+        bottom: 0;
+        left: 0;
+        width: 100%;
+        padding: 0;
+        margin: 0;
+        background: #1d61dd;
+        color: white;
+        font-weight: bold;
+        height: 55px;
+        z-index: 99;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+    header nav p {
+        width: 100%;
+        text-align: center;
+    }
+}
+
+
+/* tablet and desktop 
+@media (max-width: 480px){
+    header{
+        background: green;
+    }
+}
+
+/* desktop 
+@media (max-width: 480px){
+    header{
+        background: green;
+    }
+}
