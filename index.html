@@ -64,60 +64,58 @@
         </div>
     </section>
     <section id="portifolio" class="portfolio">
-        <h1 class="title-green">Portfólio</h1>
-        <div class="portfolio-container">
-            <div class="portfolio-card">
-                <div class="img-container">
-                    <div class="line green"></div>
-                    <img src="assets/portfolio-linktree.png" alt="Imagem do portfolio">
+        <div class="slider">
+            <!--radio buttons-->
+            <div class="slides">
+                <input type="radio" name="slide" id="slide1">
+                <input type="radio" name="slide" id="slide2">
+                <input type="radio" name="slide" id="slide3">
+                <input type="radio" name="slide" id="slide4">
+                
+
+                <div class="slide first"><img src="/assets/gifs/gif.gif" alt=""></div>
+                <div class="slide"><img src="/assets/gifs/Animação.gif" alt=""></div>
+                <div class="slide"><img src="/assets/gifs/gif.gif" alt=""></div>
+                <div class="slide"><img src="/assets/gifs/Animação.gif" alt=""></div>
+                
+
+                <div class="navigation-auto">
+                    <div class="auto-btn1"></div>
+                    <div class="auto-btn2"></div>
+                    <div class="auto-btn3"></div>
+                    <div class="auto-btn4"></div>
                 </div>
-                <div class="language-container">
-                    <ul>
-                        <li>html</li>
-                        <li>css</li>
-                        <li>js</li>
-                    </ul>
-                </div>
-                <p><b>Linktree</b></p>
-                <p>
-                    Projeto feito usando html, css e js com o objetivo de ser um agrupador de links para o instagram.
-                </p>
             </div>
-            <div class="portfolio-card">
-                <div class="img-container">
-                    <div class="line green"></div>
-                    <img src="assets/portfolio-linktree.png" alt="Imagem do portfolio">
-                </div>
-                <div class="language-container">
-                    <ul>
-                        <li>html</li>
-                        <li>css</li>
-                        <li>js</li>
-                    </ul>
-                </div>
-                <p><b>Linktree</b></p>
-                <p>
-                    Projeto feito usando html, css e js com o objetivo de ser um agrupador de links para o instagram.
-                </p>
-            </div>
-            <div class="portfolio-card">
-                <div class="img-container">
-                    <div class="line green"></div>
-                    <img src="assets/portfolio-linktree.png" alt="Imagem do portfolio">
-                </div>
-                <div class="language-container">
-                    <ul>
-                        <li>html</li>
-                        <li>css</li>
-                        <li>js</li>
-                    </ul>
-                </div>
-                <p><b>Linktree</b></p>
-                <p>
-                    Projeto feito usando html, css e js com o objetivo de ser um agrupador de links para o instagram.
-                </p>
+
+            <div id="manual" class="manual-navigation">
+                <label for="slide1" id="1" class="manual-btn"></label>
+                <label for="slide2" id="2" class="manual-btn"></label>
+                <label for="slide3" id="3" class="manual-btn"></label>
+                <label for="slide4" id="4" class="manual-btn"></label>
             </div>
         </div>
+
+        <div class="info-slide">
+            <h3>Descrição</p>
+            <div id="descricao" class="padrao-info">--</div>
+            <h3>Linguagens</h3>
+            <div id="linguagens" class="padrao-info">
+                <div id="html" class="flex "></div>
+                <div id="css" class="flex "></div>
+                <div id="js" class="flex "></div>
+                <div id="r" class="flex "></div>
+            </div>
+
+            <div class="link">
+                <h3>Acesso a página</h3>
+                <p ><a href="https://www.google.com.br" target="_blank" id="link">Em breve</a></p>
+            </div>
+            <div class="mobile">
+                <h3>Responsividade</h3>
+                <p id="mobile">Não disponivel</p>
+            </div>
+        </div>
+
     </section>
 
     <section id="curriculum" class="curriculum">
@@ -158,7 +156,8 @@
     <footer>
         <p>Made by Felipe Saraiva - 2022</p>
     </footer>
-
+    <script src="/script.js"></script>
+    
     <script>
         feather.replace()
     </script>
