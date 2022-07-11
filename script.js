@@ -1,7 +1,7 @@
 let count =1;
 
 let projectsJson = [
-    {description:'Plataforma desenvolvida durante uma iniciação ciemtífica em conjunto com um grupo de pesquisa hídrico da UFPel', language:['HTML','CSS','JS','R'], porcent:['60.6%', '8.4%', '0%', '31.0%'], pag:'4Em breve', link:' ', mobile:'4Não disponivel', local:" ./assets/paginas/pizza-main/index.html"},
+    {description:'Plataforma desenvolvida durante uma iniciação científica em conjunto com um grupo de pesquisa hídrico da UFPel', language:['HTML','CSS','JS','R'], porcent:['60.6%', '8.4%', '0%', '31.0%'], pag:'4Em breve', link:' ', mobile:'4Não disponivel', local:" ./assets/paginas/pizza-main/index.html"},
     {description:'Este foi o meu primeiro projeto com o intuito de representar uma página de viagens', language:['HTML','CSS','JS','R'], porcent:['54.9%', '45.1%', '0%', '0%'], pag:'Click Aqui', link:' ', mobile:'Disponível', local:"./assets/paginas/page-viagem-main/index.html"},
     {description:'Cópia do site da Tesla', language:['HTML','CSS','JS','R'], porcent:['33.2%', '66.8%', '0%', '0%'], pag:'2Em breve', link:' ', mobile:'2Não disponivel', local:"./assets/paginas/copy-tesla-master/index.html"},
     {description:'Uma página para uma agência médica', language:['HTML','CSS','JS','R'], porcent:['69.6%', '30.4%', '0%', '0%'], pag:'3Em breve', link:' ', mobile:'3Não disponivel', local:"./assets/paginas/Medicenter-master/index.html"},
