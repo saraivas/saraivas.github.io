@@ -86,8 +86,18 @@ form .social-media-container {
     width: fit-content;
 }
 
-form .social-media-container,
-.icon-container {
+form .icon-container {
     background: red;
-    display: inline-block;
+    padding: 7px;
+    margin: 0 10px;
+    border-radius: 5px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+form .social-media-container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    
 }
