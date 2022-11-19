@@ -94,6 +94,7 @@ form .icon-container {
     display: flex;
     align-items: center;
     justify-content: center;
+    color: white;
 }
 form .social-media-container{
     display: flex;
