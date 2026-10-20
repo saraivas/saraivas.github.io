@@ -1,0 +1,124 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Felipe Saraiva · Desenvolvedor full-stack com foco em backend</title>
+  <meta name="description" content="Desenvolvedor full-stack com foco em backend e mais de 5 anos de experiência. Projetos públicos com testes, ADRs e deploy.">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Felipe Saraiva · Full-stack, backend focus">
+  <meta property="og:url" content="https://saraivas.github.io/">
+  <link rel="canonical" href="https://saraivas.github.io/">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Sans:wght@400;500;600&family=Sora:wght@500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body>
+  <a class="skip" href="#main">Skip to content</a>
+
+  <header class="wrap">
+    <nav class="nav" aria-label="Main">
+      <a class="brand" href="index.html">felipe.saraiva</a>
+      <a href="index.html" aria-current="page" data-i18n="nav.home">Início</a>
+      <a href="projects.html" data-i18n="nav.projects">Projetos</a>
+      <a href="about.html" data-i18n="nav.about">Sobre</a>
+      <a href="stack.html" data-i18n="nav.stack">Stack</a>
+      <a href="contact.html" data-i18n="nav.contact">Contato</a>
+      <div class="lang" role="group" aria-label="Language">
+        <button class="seg" type="button" data-lang="pt" aria-pressed="true">PT</button>
+        <button class="seg" type="button" data-lang="en" aria-pressed="false">EN</button>
+      </div>
+    </nav>
+  </header>
+
+  <main id="main" class="wrap">
+    <section class="hero">
+      <div class="hero-text">
+        <div class="eyebrow" data-i18n="hero.eyebrow">FULL-STACK · FOCO EM BACKEND · DADOS</div>
+        <h1 data-i18n="hero.h1">Backend que se explica sozinho.</h1>
+        <p class="lead" data-i18n="hero.lead"></p>
+        <div class="actions">
+          <a class="btn btn-pri" href="projects.html" data-i18n="hero.cta">Ver projetos</a>
+          <a class="btn btn-sec" href="https://github.com/saraivas">GitHub ↗</a>
+        </div>
+        <div class="status" data-i18n="hero.avail"></div>
+      </div>
+      <div class="photo">
+        <div class="photo-box">
+          <!-- Replace this block with: <img src="assets/img/felipe.jpg" alt="Felipe Saraiva"> -->
+          <div class="photo-initials" aria-hidden="true">FS</div>
+          <div class="photo-note" data-i18n="hero.photo">[FOTO PROFISSIONAL]</div>
+        </div>
+        <div class="photo-caption" data-i18n="hero.caption"></div>
+      </div>
+    </section>
+
+    <section class="section" aria-labelledby="ex-title">
+      <div class="card explorer">
+        <div class="explorer-head">
+          <h2 id="ex-title" data-i18n="ex.title">Teste a API</h2>
+          <p data-i18n="ex.hint"></p>
+        </div>
+        <div class="explorer-body">
+          <div class="explorer-list" id="ex-list"></div>
+          <div class="explorer-out" aria-live="polite">
+            <div class="explorer-status" id="ex-status"></div>
+            <pre id="ex-body"></pre>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" aria-labelledby="feat-title">
+      <div class="section-head">
+        <h2 class="section-title" id="feat-title" data-i18n="feat.title">Projetos em destaque</h2>
+        <a class="link-accent" href="projects.html" data-i18n="feat.all">Todos os projetos →</a>
+      </div>
+      <div class="cards">
+        <a class="card proj" href="project-tasklane.html">
+          <div class="proj-top"><span class="proj-name">tasklane-api</span><span class="tag" data-i18n="status.done">Concluído</span></div>
+          <p data-i18n="p1"></p>
+          <div class="tags"><span class="tag">FastAPI</span><span class="tag">PostgreSQL</span><span class="tag">JWT</span><span class="tag">Docker</span></div>
+        </a>
+        <a class="card proj" href="projects.html">
+          <div class="proj-top"><span class="proj-name">orbitdesk-api</span><span class="tag tag-warn" data-i18n="status.wip">Em andamento</span></div>
+          <p data-i18n="p2"></p>
+          <div class="tags"><span class="tag">FastAPI</span><span class="tag">SQLAlchemy 2</span><span class="tag">RBAC</span><span class="tag">Multi-tenant</span></div>
+        </a>
+        <a class="card proj" href="https://gphidro.shinyapps.io/idfgeo/">
+          <div class="proj-top"><span class="proj-name">IDFGeo</span><span class="tag tag-info" data-i18n="status.acad">Acadêmico</span></div>
+          <p data-i18n="p3"></p>
+          <div class="tags"><span class="tag">R</span><span class="tag">Shiny</span><span class="tag">Geoestatística</span></div>
+        </a>
+      </div>
+    </section>
+
+    <section class="section" aria-labelledby="prog-title">
+      <h2 class="section-title" id="prog-title" data-i18n="prog.title">Em andamento: orbitdesk-api</h2>
+      <div class="card progress" id="prog-list"></div>
+    </section>
+
+    <section class="section" aria-labelledby="how-title">
+      <h2 class="section-title" id="how-title" data-i18n="how.title">Como eu trabalho com IA</h2>
+      <p class="section-lead" data-i18n="how.lead"></p>
+      <div class="flow-steps" id="flow-steps"></div>
+      <div class="cols" aria-live="polite">
+        <div class="col lead-col"><h3 data-i18n="how.decide">EU DECIDO</h3><p id="flow-decide"></p></div>
+        <div class="col"><h3 data-i18n="how.ai">A IA AJUDA</h3><p id="flow-ai"></p></div>
+        <div class="col"><h3 data-i18n="how.validate">COMO EU VALIDO</h3><p id="flow-validate"></p></div>
+      </div>
+      <div class="example"><strong data-i18n="how.example">Exemplo real:</strong> <span id="flow-example"></span></div>
+    </section>
+  </main>
+
+  <footer class="footer wrap">
+    <span data-i18n="footer.note">felipe.saraiva · 2026</span>
+    <span>github.com/saraivas</span>
+  </footer>
+
+  <script src="assets/js/data.js"></script>
+  <script src="assets/js/i18n.js"></script>
+  <script src="assets/js/home.js"></script>
+</body>
+</html>
