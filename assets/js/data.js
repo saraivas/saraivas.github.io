@@ -37,6 +37,30 @@ window.I18N = {
     "projects.eyebrow": "PROJETOS",
     "projects.title": "Cada projeto é um repositório.",
     "projects.lead": "Com README, testes, CI e decisões registradas em ADRs. Os planejados aparecem aqui para mostrar o caminho, e estão marcados como tal.",
+    "meta.projects.title": "Projetos · Felipe Saraiva",
+    "meta.projects.desc": "Projetos públicos de Felipe Saraiva, com testes, CI e decisões registradas em ADRs.",
+    "meta.tasklane.title": "tasklane-api · Felipe Saraiva",
+    "meta.tasklane.desc": "API REST de tarefas com JWT manual, paginação, testes de integração, CI/CD e deploy.",
+    "tl.back": "Todos os projetos",
+    "tl.lead": "API REST de tarefas feita para fechar lacunas de fundamentos: JWT por dentro, testes de integração reais e pipeline de CI/CD. Escopo por usuário, paginação e validação em todos os endpoints.",
+    "tl.mRole": "PAPEL",
+    "tl.vRole": "Projeto individual",
+    "tl.mTests": "TESTES",
+    "tl.vTests": "26 automatizados",
+    "tl.mDeploy": "DEPLOY",
+    "tl.archTitle": "Arquitetura",
+    "tl.deploy": "Deploy (Render)",
+    "tl.decTitle": "Decisões que importaram",
+    "tl.ctx": "Contexto.",
+    "tl.trade": "Trade-off.",
+    "tl.ciTitle": "O que o CI pegou",
+    "tl.ciStatus": "Primeira execução do workflow: falhou",
+    "tl.ciText": "Uma dependência instalada localmente nunca foi declarada. Na minha máquina funcionava; num ambiente limpo, não. Foi exatamente para isso que o CI serviu.",
+    "tl.apiTitle": "Endpoints",
+    "tl.cDesc": "Descrição",
+    "tl.btnRepo": "Repositório",
+    "tl.btnDemo": "Demo",
+    "tl.btnPost": "Post no dev.to",
     "footer.note": "felipe.saraiva · 2026",
     lists: {
       projFilters: [
@@ -44,6 +68,16 @@ window.I18N = {
         { k: "plan", l: "Planejado" }, { k: "acad", l: "Pesquisa e faculdade" }
       ],
       projDetail: "Ver detalhes",
+      tlDecisions: [
+        { title: "JWT implementado manualmente", ctx: "Em vez de um provedor de autenticação, escrevi emissão, validação e refresh de tokens para entender o fluxo por dentro (header, payload, assinatura, tipo access/refresh).", trade: "Mais código e mais superfície de erro, em troca de domínio real do mecanismo. Mitigado com testes de auth.", ref: "ADR 0001" },
+        { title: "404 em vez de 403 para recursos de outro usuário", ctx: "Um 403 confirma que o recurso existe. Um 404 não revela nada sobre o que existe no sistema.", trade: "Perde um pouco de clareza para quem depura o próprio erro; ganha em vazamento de informação.", ref: "ADR 0006" },
+        { title: "Dependência fixada que escorregou (bcrypt)", ctx: "O passlib quebra com bcrypt 4.1 ou superior, então fixei bcrypt==4.0.1. Uma instalação posterior subiu para 5.0.0 sem aviso e só percebi na revisão.", trade: "Fixar versão não basta sem checagem explícita. Documentado e re-fixado.", ref: "ADR 0008" },
+        { title: "Paginação offset/limit com total em uma query", ctx: "Listagem com filtro por status. O total vem junto na mesma consulta com COUNT(*) OVER(), sem segunda ida ao banco.", trade: "Simples e boa para este volume; em listas enormes ou mutáveis, paginação por cursor seria mais estável.", ref: "ADR 0009" }
+      ],
+      tlApi: [
+        ["POST", "/auth/register", "Cria usuário", "Não"], ["POST", "/auth/login", "Access + refresh token", "Não"], ["POST", "/auth/refresh", "Renova o access token", "Refresh"],
+        ["GET", "/tasks", "Lista paginada com filtro", "Sim"], ["POST", "/tasks", "Cria tarefa", "Sim"], ["PATCH", "/tasks/{id}", "Atualiza tarefa", "Sim"], ["DELETE", "/tasks/{id}", "Remove tarefa", "Sim"]
+      ],
       projects: [
         { k: "done", name: "tasklane-api", status: "Concluído", badge: "",
           summary: "API REST de tarefas com JWT manual (access + refresh), paginação, testes de integração, CI e deploy em Render + Neon.",
@@ -133,6 +167,30 @@ window.I18N = {
     "projects.eyebrow": "PROJECTS",
     "projects.title": "Every project is a repository.",
     "projects.lead": "With a README, tests, CI and decisions recorded as ADRs. Planned ones are shown to make the path visible, and labelled as planned.",
+    "meta.projects.title": "Projects · Felipe Saraiva",
+    "meta.projects.desc": "Public projects by Felipe Saraiva, with tests, CI and decisions recorded as ADRs.",
+    "meta.tasklane.title": "tasklane-api · Felipe Saraiva",
+    "meta.tasklane.desc": "Task REST API with hand-written JWT, pagination, integration tests, CI/CD and a deploy.",
+    "tl.back": "All projects",
+    "tl.lead": "A task REST API built to close fundamentals gaps: JWT from the inside, real integration tests and a CI/CD pipeline. Per-user scoping, pagination and validation on every endpoint.",
+    "tl.mRole": "ROLE",
+    "tl.vRole": "Solo project",
+    "tl.mTests": "TESTS",
+    "tl.vTests": "26 automated",
+    "tl.mDeploy": "DEPLOY",
+    "tl.archTitle": "Architecture",
+    "tl.deploy": "Deploy (Render)",
+    "tl.decTitle": "Decisions that mattered",
+    "tl.ctx": "Context.",
+    "tl.trade": "Trade-off.",
+    "tl.ciTitle": "What CI caught",
+    "tl.ciStatus": "First workflow run: failed",
+    "tl.ciText": "A dependency installed locally was never declared. It worked on my machine and broke in a clean environment. That's exactly what CI is for.",
+    "tl.apiTitle": "Endpoints",
+    "tl.cDesc": "Description",
+    "tl.btnRepo": "Repository",
+    "tl.btnDemo": "Demo",
+    "tl.btnPost": "dev.to post",
     "footer.note": "felipe.saraiva · 2026",
     lists: {
       projFilters: [
@@ -140,6 +198,16 @@ window.I18N = {
         { k: "plan", l: "Planned" }, { k: "acad", l: "Research and college" }
       ],
       projDetail: "View details",
+      tlDecisions: [
+        { title: "Hand-written JWT", ctx: "Instead of an auth provider, I wrote token issuing, validation and refresh to understand the flow from the inside (header, payload, signature, access/refresh type).", trade: "More code and more surface for mistakes, in exchange for real command of the mechanism. Mitigated with auth tests.", ref: "ADR 0001" },
+        { title: "404 instead of 403 for another user's resources", ctx: "A 403 confirms the resource exists. A 404 reveals nothing about what exists in the system.", trade: "Slightly less clarity for people debugging their own mistakes; better against information leakage.", ref: "ADR 0006" },
+        { title: "A pinned dependency that drifted (bcrypt)", ctx: "passlib breaks with bcrypt 4.1 or newer, so I pinned bcrypt==4.0.1. A later install bumped it to 5.0.0 silently and I only noticed in review.", trade: "Pinning is not enough without an explicit check. Documented and re-pinned.", ref: "ADR 0008" },
+        { title: "Offset/limit pagination with the total in one query", ctx: "Listing with a status filter. The total comes back in the same query using COUNT(*) OVER(), with no second round trip.", trade: "Simple and fine at this volume; for huge or changing lists, cursor pagination would be more stable.", ref: "ADR 0009" }
+      ],
+      tlApi: [
+        ["POST", "/auth/register", "Create a user", "No"], ["POST", "/auth/login", "Access + refresh token", "No"], ["POST", "/auth/refresh", "Renew the access token", "Refresh"],
+        ["GET", "/tasks", "Paginated, filterable list", "Yes"], ["POST", "/tasks", "Create a task", "Yes"], ["PATCH", "/tasks/{id}", "Update a task", "Yes"], ["DELETE", "/tasks/{id}", "Delete a task", "Yes"]
+      ],
       projects: [
         { k: "done", name: "tasklane-api", status: "Completed", badge: "",
           summary: "Task REST API with a hand-written JWT flow (access + refresh), pagination, integration tests, CI and a Render + Neon deploy.",
@@ -192,5 +260,15 @@ window.I18N = {
         { l: "CI/CD", d: "I define the pipeline and what blocks a deploy. Deploys are mine.", a: "Helps diagnose failures.", v: "CI runs the suite on a real Postgres on every push.", e: "an undeclared dependency was caught on the first CI run." }
       ]
     }
+  }
+};
+
+/* Links used by project pages. Leave a value empty to hide its button. */
+window.SITE = {
+  tasklane: {
+    repo: "https://github.com/saraivas/tasklane-api",
+    adrs: "https://github.com/saraivas/tasklane-api/tree/main/docs/adr",
+    demo: "",   // e.g. the Render URL, when you want to show it
+    post: ""    // e.g. the dev.to post URL
   }
 };

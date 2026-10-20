@@ -29,9 +29,13 @@
       if (dict[key] !== undefined) el.textContent = dict[key];
     });
 
-    if (dict["meta.title"]) document.title = dict["meta.title"];
+    /* Pages set <html data-page="projects"> to use "meta.projects.title" / ".desc". */
+    var page = document.documentElement.getAttribute("data-page");
+    var titleKey = page ? "meta." + page + ".title" : "meta.title";
+    var descKey = page ? "meta." + page + ".desc" : "meta.desc";
+    if (dict[titleKey]) document.title = dict[titleKey];
     var desc = document.querySelector('meta[name="description"]');
-    if (desc && dict["meta.desc"]) desc.setAttribute("content", dict["meta.desc"]);
+    if (desc && dict[descKey]) desc.setAttribute("content", dict[descKey]);
 
     document.querySelectorAll("[data-lang]").forEach(function (btn) {
       btn.setAttribute("aria-pressed", btn.getAttribute("data-lang") === current ? "true" : "false");
