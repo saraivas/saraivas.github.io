@@ -266,6 +266,25 @@ img { max-width: 100%; display: block; }
 .case .arch { align-items: stretch; }
 .case .arch .arrow { align-self: center; }
 
+/* ---- Stack page ---------------------------------------------------------- */
+
+.selected { border-color: var(--accent); display: flex; flex-wrap: wrap; gap: 16px 32px; align-items: flex-start; margin-bottom: 32px; }
+.selected .sel-head { flex: 0 1 220px; }
+.selected .sel-name { font: 600 24px var(--font-mono); letter-spacing: -0.02em; }
+.selected .tag { display: inline-block; margin-top: 8px; }
+.selected p { flex: 1 1 360px; margin: 0; color: var(--muted); font-size: 17px; }
+
+.stack-groups { display: flex; flex-direction: column; gap: 32px; }
+.stack-groups h2 { margin: 0 0 12px; font: 600 20px var(--font-display); letter-spacing: -0.02em; }
+.tech {
+  font: 500 14px var(--font-mono); border: 1px solid var(--line); background: var(--panel); color: var(--ink);
+  padding: 0 16px; min-height: 44px; border-radius: 8px; cursor: pointer;
+}
+.tech:hover { border-color: var(--accent); }
+.tech.plan { border-style: dashed; color: var(--muted); }
+.tech[aria-pressed="true"] { background: var(--ink); color: #fff; border-color: var(--ink); }
+.legend { font: 13px var(--font-mono); color: var(--muted); }
+
 /* ---- Progress checklist -------------------------------------------------- */
 
 .progress { display: flex; flex-wrap: wrap; gap: 12px 32px; }

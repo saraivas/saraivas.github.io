@@ -84,6 +84,12 @@ window.I18N = {
     "case.dec": "Decisão: 404",
     "case.ci": "CI verde",
     "case.link": "Ver os ADRs",
+    "meta.stack.title": "Stack · Felipe Saraiva",
+    "meta.stack.desc": "Tecnologias que Felipe Saraiva usa, e em qual projeto cada uma aparece.",
+    "stack.eyebrow": "STACK",
+    "stack.title": "O que uso, e onde usei.",
+    "stack.lead": "Clique numa tecnologia para ver em que projeto ela aparece. Borda tracejada significa planejado ou em estudo.",
+    "stack.legend": "Sólido = usado em projeto · Tracejado = planejado / em estudo",
     "footer.note": "felipe.saraiva · 2026",
     lists: {
       projFilters: [
@@ -91,6 +97,7 @@ window.I18N = {
         { k: "plan", l: "Planejado" }, { k: "acad", l: "Pesquisa e faculdade" }
       ],
       projDetail: "Ver detalhes",
+      stackStatus: { use: "Em uso", plan: "Planejado", study: "Em estudo" },
       aboutTabs: [{ k: "work", l: "Trabalho" }, { k: "int", l: "Estágio" }, { k: "res", l: "Pesquisa" }, { k: "col", l: "Faculdade" }],
       aboutLimits: [
         "Não decide a arquitetura: eu escolho entre as alternativas.",
@@ -272,6 +279,12 @@ window.I18N = {
     "case.dec": "Decision: 404",
     "case.ci": "Green CI",
     "case.link": "View the ADRs",
+    "meta.stack.title": "Stack · Felipe Saraiva",
+    "meta.stack.desc": "Technologies Felipe Saraiva uses, and the project each one appears in.",
+    "stack.eyebrow": "STACK",
+    "stack.title": "What I use, and where.",
+    "stack.lead": "Click a technology to see which project it appears in. A dashed border means planned or being studied.",
+    "stack.legend": "Solid = used in a project · Dashed = planned / studying",
     "footer.note": "felipe.saraiva · 2026",
     lists: {
       projFilters: [
@@ -279,6 +292,7 @@ window.I18N = {
         { k: "plan", l: "Planned" }, { k: "acad", l: "Research and college" }
       ],
       projDetail: "View details",
+      stackStatus: { use: "In use", plan: "Planned", study: "Studying" },
       aboutTabs: [{ k: "work", l: "Work" }, { k: "int", l: "Internship" }, { k: "res", l: "Research" }, { k: "col", l: "College" }],
       aboutLimits: [
         "It does not decide the architecture: I choose between the alternatives.",
@@ -388,3 +402,41 @@ window.SITE = {
     post: ""    // e.g. the dev.to post URL
   }
 };
+
+/* Stack: each item is [name, status, text in PT, text in EN].
+   status: "use" (used in a project), "plan" (planned), "study" (studying). */
+window.STACK = [
+  { title: { pt: "Backend", en: "Backend" }, items: [
+    ["Python", "use", "Linguagem principal dos projetos e do dia a dia no trabalho.", "Main language of the projects and of day-to-day work."],
+    ["FastAPI", "use", "tasklane-api e orbitdesk-api: rotas, dependências (auth, tenant, permissões) e documentação OpenAPI automática.", "tasklane-api and orbitdesk-api: routes, dependencies (auth, tenant, permissions) and automatic OpenAPI docs."],
+    ["Flask", "use", "Serviços de produção no trabalho, ao lado do FastAPI.", "Production services at work, alongside FastAPI."],
+    ["Pydantic v2", "use", "Schemas e validação nas bordas da API, com validators e ConfigDict.", "Schemas and validation at the API edges, with validators and ConfigDict."],
+    ["pytest", "use", "Testes unitários e de integração com banco de teste por teste e dependency_overrides.", "Unit and integration tests with a per-test database and dependency_overrides."]
+  ] },
+  { title: { pt: "Dados", en: "Data" }, items: [
+    ["R / Shiny", "use", "IDFGeo: análise estatística, interpolação espacial e a interface web da ferramenta.", "IDFGeo: statistical analysis, spatial interpolation and the tool web interface."],
+    ["PostgreSQL", "use", "Chaves UUID, enums, restrições compostas, índices e transações. RLS está planejado no orbitdesk-api.", "UUID keys, enums, composite constraints, indexes and transactions. RLS is planned for orbitdesk-api."],
+    ["SQLAlchemy 2", "use", "Modelos e consultas nos dois projetos.", "Models and queries in both projects."],
+    ["Alembic", "use", "Migrações geradas a partir dos modelos, aplicadas em local, CI e Neon.", "Migrations generated from the models, applied locally, in CI and on Neon."],
+    ["Redis", "plan", "Cache-aside nas contagens por status e contador do rate limiting, no orbitdesk-api.", "Cache-aside for per-status counts and the rate-limit counter, in orbitdesk-api."],
+    ["pgvector", "study", "Busca semântica com embeddings, no projeto semantic-search-api.", "Semantic search with embeddings, in the semantic-search-api project."]
+  ] },
+  { title: { pt: "Front-end", en: "Front-end" }, items: [
+    ["HTML, CSS, JS", "use", "HTML, CSS e JavaScript puros, desde o estágio e o IDFGeo. Este site é feito assim.", "Plain HTML, CSS and JavaScript, since the internship and IDFGeo. This site is built that way."],
+    ["React", "use", "Interfaces de produção no trabalho.", "Production interfaces at work."],
+    ["Next.js", "use", "Telas, rotas e integração com a API na Constructer.ai.", "Screens, routes and API integration at Constructer.ai."]
+  ] },
+  { title: { pt: "DevOps", en: "DevOps" }, items: [
+    ["Docker", "use", "Dockerfile e Compose para API e banco, com rede por nome de serviço.", "Dockerfile and Compose for the API and database, with service-name networking."],
+    ["GitHub Actions", "use", "Workflow com serviço Postgres rodando pytest a cada push.", "Workflow with a Postgres service running pytest on every push."],
+    ["Render", "use", "Deploy da tasklane-api no plano gratuito.", "tasklane-api deployed on the free plan."],
+    ["Neon", "use", "Postgres gerenciado; URL direta para migrações e pooled para a aplicação.", "Managed Postgres; direct URL for migrations and pooled for the app."],
+    ["RQ worker", "plan", "Fila para o resumo semanal da organização, rodando via Docker Compose local.", "Queue for the weekly organization summary, run through local Docker Compose."]
+  ] },
+  { title: { pt: "Segurança e design", en: "Security and design" }, items: [
+    ["JWT", "use", "Access e refresh com claim de tipo, escrito à mão na tasklane-api.", "Access and refresh with a type claim, hand-written in tasklane-api."],
+    ["RBAC", "use", "Mapa papel → permissões em código no orbitdesk-api, aplicado por dependência.", "Role → permissions map in code in orbitdesk-api, enforced by a dependency."],
+    ["ADRs", "use", "Decisões registradas em docs/adr em cada repositório.", "Decisions recorded in docs/adr in each repository."],
+    ["Kubernetes", "study", "Apenas conceitos, sem prática planejada por enquanto.", "Concepts only, no hands-on planned for now."]
+  ] }
+];
