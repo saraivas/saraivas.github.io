@@ -93,6 +93,7 @@ img { max-width: 100%; display: block; }
 }
 .tag-warn { background: var(--warn-bg); color: var(--warn-ink); }
 .tag-info { background: var(--info-bg); color: var(--info-ink); }
+.tag-plan { background: #e2e8f0; color: #334155; }
 .tags { display: flex; flex-wrap: wrap; gap: 6px; }
 
 /* ---- Hero ---------------------------------------------------------------- */
@@ -153,6 +154,33 @@ img { max-width: 100%; display: block; }
 .proj-top { display: flex; justify-content: space-between; gap: 12px; margin-bottom: 12px; }
 .proj-name { font: 500 16px var(--font-mono); }
 .proj p { margin: 0 0 16px; color: var(--muted); }
+
+/* ---- Page header (inner pages) ------------------------------------------- */
+
+.page-head { padding: 64px 0 32px; }
+.page-head h1 { margin: 0 0 16px; font: 700 clamp(32px, 4.4vw, 48px)/1.1 var(--font-display); letter-spacing: -0.02em; }
+.page-head p { margin: 0; font-size: 18px; color: var(--muted); max-width: 640px; }
+
+/* ---- Filter chips and project list --------------------------------------- */
+
+.chips { display: flex; flex-wrap: wrap; gap: 8px; padding-bottom: 24px; }
+.chip {
+  font: 500 13px var(--font-mono); border: 1px solid var(--line); background: var(--panel); color: var(--muted);
+  padding: 0 16px; min-height: 44px; border-radius: 22px; cursor: pointer;
+}
+.chip:hover { border-color: var(--accent); }
+.chip[aria-pressed="true"] { background: var(--accent); color: #fff; border-color: var(--accent); }
+
+.item { flex: 1 1 480px; display: flex; flex-direction: column; gap: 14px; min-width: 0; }
+.item-top { display: flex; justify-content: space-between; align-items: center; gap: 12px; }
+.item p { margin: 0; color: var(--muted); }
+.item-links { display: flex; flex-wrap: wrap; gap: 4px 24px; margin-top: auto; padding-top: 8px; border-top: 1px solid var(--line); }
+.item-links a, .item-links span {
+  min-height: 44px; display: inline-flex; align-items: center;
+}
+.item-links a { color: var(--accent); font-weight: 500; text-decoration: none; }
+.item-links a:hover { text-decoration: underline; }
+.item-links span { font: 13px var(--font-mono); color: var(--muted); }
 
 /* ---- Progress checklist -------------------------------------------------- */
 
