@@ -285,6 +285,23 @@ img { max-width: 100%; display: block; }
 .tech[aria-pressed="true"] { background: var(--ink); color: #fff; border-color: var(--ink); }
 .legend { font: 13px var(--font-mono); color: var(--muted); }
 
+/* ---- Contact page -------------------------------------------------------- */
+
+.contact-links { padding-top: 12px; padding-bottom: 12px; }
+.contact-row {
+  display: flex; justify-content: space-between; align-items: center; gap: 12px;
+  min-height: 56px; padding: 0 4px; border-top: 1px solid var(--line); text-decoration: none;
+}
+.contact-row:first-child { border-top: 0; }
+.contact-row:hover { color: var(--accent); }
+.contact-row .label { font-weight: 500; }
+.contact-row .value { font: 13px var(--font-mono); color: var(--muted); overflow-wrap: anywhere; text-align: right; }
+
+.avail { display: flex; flex-wrap: wrap; gap: 16px 48px; background: #0f172a; color: #e2e8f0; border-color: #0f172a; }
+.avail > div { flex: 1 1 240px; }
+.avail .k { font: 12px var(--font-mono); color: #7dd3b0; }
+.avail .v { font-weight: 500; }
+
 /* ---- Progress checklist -------------------------------------------------- */
 
 .progress { display: flex; flex-wrap: wrap; gap: 12px 32px; }
