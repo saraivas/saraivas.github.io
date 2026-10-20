@@ -61,6 +61,29 @@ window.I18N = {
     "tl.btnRepo": "Repositório",
     "tl.btnDemo": "Demo",
     "tl.btnPost": "Post no dev.to",
+    "meta.about.title": "Sobre · Felipe Saraiva",
+    "meta.about.desc": "Trajetória de Felipe Saraiva: trabalho, estágio, pesquisa e faculdade, e como ele trabalha com IA.",
+    "about.eyebrow": "SOBRE",
+    "about.title": "Aprendi fazendo. Agora estou documentando.",
+    "about.p1": "Sou desenvolvedor full-stack com foco em backend e mais de 5 anos de experiência, entre pesquisa aplicada, estágio e produção. Há mais de 3 anos no grupo NewFields (NewFields Brasil e, hoje, EnviroAsset), resolvo problemas reais de produção: isolamento entre clientes, desempenho e pipelines de dados.",
+    "about.p2": "Programo desde 2020, quando comecei num projeto de hidrologia na UFPel. Hoje formalizo os fundamentos (padrões, system design, testes, CI/CD) em projetos públicos e escrevo sobre isso. Moro no Brasil e estou aberto a oportunidades remotas internacionais e a boas vagas no Brasil.",
+    "about.tlTitle": "Trajetória",
+    "ai.title": "Como eu trabalho com IA",
+    "ai.p1": "Uso IA como parceira de raciocínio, não como substituta. Eu defino o problema, levanto as alternativas e discuto os trade-offs com ela antes de decidir, e a decisão fica registrada num ADR.",
+    "ai.p2": "A IA acelera a implementação e as revisões. Eu respondo pela arquitetura, pelos testes, pela segurança e pelo que vai para produção. Declaro esse uso abertamente.",
+    "ai.limTitle": "O QUE A IA NÃO FAZ NO MEU FLUXO",
+    "case.tag": "UM CASO REAL",
+    "case.title": "404 ou 403 para o recurso de outro usuário?",
+    "case.problem": "Problema: o usuário A pede a tarefa do usuário B.",
+    "case.o1": "Opção 1 · 403",
+    "case.o1a": "+ explica o motivo",
+    "case.o1b": "− confirma que o recurso existe",
+    "case.o2": "Opção 2 · 404",
+    "case.o2a": "+ não revela o que existe",
+    "case.o2b": "− erro menos explícito",
+    "case.dec": "Decisão: 404",
+    "case.ci": "CI verde",
+    "case.link": "Ver os ADRs",
     "footer.note": "felipe.saraiva · 2026",
     lists: {
       projFilters: [
@@ -68,6 +91,41 @@ window.I18N = {
         { k: "plan", l: "Planejado" }, { k: "acad", l: "Pesquisa e faculdade" }
       ],
       projDetail: "Ver detalhes",
+      aboutTabs: [{ k: "work", l: "Trabalho" }, { k: "int", l: "Estágio" }, { k: "res", l: "Pesquisa" }, { k: "col", l: "Faculdade" }],
+      aboutLimits: [
+        "Não decide a arquitetura: eu escolho entre as alternativas.",
+        "Não faz commit, push nem deploy sem eu pedir.",
+        "Não entra no código nada que eu não consiga ler, entender e explicar.",
+        "Não substitui os testes: cada funcionalidade tem teste, e o CI roda a suíte num Postgres real."
+      ],
+      timeline: {
+        work: [
+          { when: "fev/2026 — hoje", what: "Analista de TI", where: "EnviroAsset (empresa do grupo NewFields) · Remoto",
+            text: "A EnviroAsset é uma plataforma web de gestão de dados e riscos ambientais. Continuidade do mesmo trabalho: o setor em que atuo passou a ser uma empresa do grupo NewFields, e a rotina passou de híbrida para remota. Mesmo escopo de backend, dados e entrega em produção.",
+            tags: ["Python", "FastAPI", "PostgreSQL", "Remoto"], href: "https://enviroasset.com.br", linkLabel: "enviroasset.com.br" },
+          { when: "set/2023 — jan/2026 · ~2 anos e 5 meses", what: "Analista de TI", where: "NewFields Brasil · Porto Alegre, RS · Híbrido",
+            text: "Desenhei e evoluí a arquitetura de backend de plataformas internas e de clientes, com serviços de produção em Python (Flask e FastAPI). Modelei dados relacionais em PostgreSQL, com migrações, e mantive CI/CD com GitHub Actions. Conduzi otimizações de desempenho em sistemas críticos e trabalhei em deploys na nuvem, configuração de ambientes e monitoramento.",
+            tags: ["Python", "Flask", "FastAPI", "PostgreSQL", "GitHub Actions"], href: "https://newfields.com.br", linkLabel: "newfields.com.br" },
+          { when: "jul/2024 — mai/2025 · ~10 meses", what: "Engenheiro de Software (contrato, meio período)", where: "Constructer.ai · Remoto · Brasil e Reino Unido",
+            text: "Desenvolvimento web de ponta a ponta numa startup de IA para construção civil: telas, rotas e API em Next.js, testes e otimizações de desempenho. Trabalho remoto com reuniões em inglês junto à equipe do Reino Unido e do Brasil.",
+            tags: ["Next.js", "API", "Testes", "Performance"], href: "https://constructer.ai", linkLabel: "constructer.ai" }
+        ],
+        int: [
+          { when: "jan — jul/2023 · 7 meses", what: "Estagiário de Desenvolvimento de Software", where: "HYGGE · Remoto · meio período",
+            text: "Contribuí com ferramentas web internas e scripts de automação, e construí e mantive interfaces responsivas com HTML, CSS e JavaScript.",
+            tags: ["HTML5", "CSS", "JavaScript", "Automação"], href: "https://hygge.eco.br", linkLabel: "hygge.eco.br" }
+        ],
+        res: [
+          { when: "jun/2020 — jun/2022 · 2 anos", what: "Assistente de Pesquisa (estágio)", where: "GPHidro · UFPel · Remoto",
+            text: "Contribuí com o IDFGeo, ferramenta de modelagem de chuva. Fiz análise estatística de grandes séries históricas em R, ajuste de distribuições probabilísticas multiparamétricas e rotinas de interpolação espacial e estimativa de coeficientes, num time que unia análise de dados e visualização web.",
+            tags: ["R", "Shiny", "Estatística", "Geoestatística"], href: "https://gphidro.shinyapps.io/idfgeo/", linkLabel: "IDFGeo" }
+        ],
+        col: [
+          { when: "abr/2017 — mai/2023 · 6 anos", what: "Bacharelado em Engenharia de Computação", where: "Universidade Federal de Pelotas (UFPel)",
+            text: "Base em engenharia de computação e de software: algoritmos, estruturas de dados, orientação a objetos, fundamentos de backend e web, e Git/GitHub. Experiência com Python, TypeScript e C. Projeto acadêmico de chatbot com NLP usando o framework Rasa.",
+            tags: ["Python", "TypeScript", "C", "Rasa"] }
+        ]
+      },
       tlDecisions: [
         { title: "JWT implementado manualmente", ctx: "Em vez de um provedor de autenticação, escrevi emissão, validação e refresh de tokens para entender o fluxo por dentro (header, payload, assinatura, tipo access/refresh).", trade: "Mais código e mais superfície de erro, em troca de domínio real do mecanismo. Mitigado com testes de auth.", ref: "ADR 0001" },
         { title: "404 em vez de 403 para recursos de outro usuário", ctx: "Um 403 confirma que o recurso existe. Um 404 não revela nada sobre o que existe no sistema.", trade: "Perde um pouco de clareza para quem depura o próprio erro; ganha em vazamento de informação.", ref: "ADR 0006" },
@@ -191,6 +249,29 @@ window.I18N = {
     "tl.btnRepo": "Repository",
     "tl.btnDemo": "Demo",
     "tl.btnPost": "dev.to post",
+    "meta.about.title": "About · Felipe Saraiva",
+    "meta.about.desc": "Felipe Saraiva's background: work, internship, research and college, and how he works with AI.",
+    "about.eyebrow": "ABOUT",
+    "about.title": "I learned by doing. Now I document it.",
+    "about.p1": "I'm a full-stack developer with a backend focus and 5+ years of experience across applied research, an internship and production work. For over 3 years in the NewFields group (NewFields Brasil and now EnviroAsset) I've solved real production problems: tenant isolation, performance and data pipelines.",
+    "about.p2": "I've been programming since 2020, when I started on a hydrology project at UFPel. Today I formalize the fundamentals (patterns, system design, testing, CI/CD) in public projects and write about it. I live in Brazil and I'm open to international remote roles and to strong opportunities in Brazil.",
+    "about.tlTitle": "Timeline",
+    "ai.title": "How I work with AI",
+    "ai.p1": "I use AI as a thinking partner, not a substitute. I define the problem, lay out the alternatives and debate the trade-offs with it before deciding, and the decision is recorded in an ADR.",
+    "ai.p2": "AI speeds up implementation and review. I own the architecture, the tests, the security and what ships to production. I state this use openly.",
+    "ai.limTitle": "WHAT AI DOES NOT DO IN MY WORKFLOW",
+    "case.tag": "A REAL CASE",
+    "case.title": "404 or 403 for another user's resource?",
+    "case.problem": "Problem: user A requests user B's task.",
+    "case.o1": "Option 1 · 403",
+    "case.o1a": "+ explains the reason",
+    "case.o1b": "− confirms the resource exists",
+    "case.o2": "Option 2 · 404",
+    "case.o2a": "+ reveals nothing about what exists",
+    "case.o2b": "− less explicit error",
+    "case.dec": "Decision: 404",
+    "case.ci": "Green CI",
+    "case.link": "View the ADRs",
     "footer.note": "felipe.saraiva · 2026",
     lists: {
       projFilters: [
@@ -198,6 +279,41 @@ window.I18N = {
         { k: "plan", l: "Planned" }, { k: "acad", l: "Research and college" }
       ],
       projDetail: "View details",
+      aboutTabs: [{ k: "work", l: "Work" }, { k: "int", l: "Internship" }, { k: "res", l: "Research" }, { k: "col", l: "College" }],
+      aboutLimits: [
+        "It does not decide the architecture: I choose between the alternatives.",
+        "It does not commit, push or deploy unless I ask.",
+        "Nothing enters the code that I cannot read, understand and explain.",
+        "It does not replace tests: every feature has them, and CI runs the suite on a real Postgres."
+      ],
+      timeline: {
+        work: [
+          { when: "Feb 2026 — present", what: "IT Analyst", where: "EnviroAsset (a NewFields group company) · Remote",
+            text: "EnviroAsset is a web platform for environmental data and risk management. Same work, continued: my area became a company in the NewFields group, and my routine moved from hybrid to remote. Same scope across backend, data and production delivery.",
+            tags: ["Python", "FastAPI", "PostgreSQL", "Remote"], href: "https://enviroasset.com.br", linkLabel: "enviroasset.com.br" },
+          { when: "Sep 2023 — Jan 2026 · ~2 years 5 months", what: "IT Analyst", where: "NewFields Brasil · Porto Alegre, RS · Hybrid",
+            text: "Designed and evolved the backend architecture of internal and client-facing platforms, with production services in Python (Flask and FastAPI). Modeled relational data in PostgreSQL, including migrations, and maintained CI/CD with GitHub Actions. Led performance optimizations in critical systems and worked on cloud deployments, environment configuration and monitoring.",
+            tags: ["Python", "Flask", "FastAPI", "PostgreSQL", "GitHub Actions"], href: "https://newfields.com.br", linkLabel: "newfields.com.br" },
+          { when: "Jul 2024 — May 2025 · ~10 months", what: "Software Engineer (contract, part-time)", where: "Constructer.ai · Remote · Brazil and UK",
+            text: "End-to-end web development at an AI startup for construction: screens, routes and API in Next.js, tests and performance optimizations. Remote work with meetings in English alongside the UK and Brazil team.",
+            tags: ["Next.js", "API", "Testing", "Performance"], href: "https://constructer.ai", linkLabel: "constructer.ai" }
+        ],
+        int: [
+          { when: "Jan — Jul 2023 · 7 months", what: "Software Development Intern", where: "HYGGE · Remote · part-time",
+            text: "Contributed to internal web tools and automation scripts, and built and maintained responsive interfaces using HTML, CSS and JavaScript.",
+            tags: ["HTML5", "CSS", "JavaScript", "Automation"], href: "https://hygge.eco.br", linkLabel: "hygge.eco.br" }
+        ],
+        res: [
+          { when: "Jun 2020 — Jun 2022 · 2 years", what: "Research Assistant (internship)", where: "GPHidro · UFPel · Remote",
+            text: "Contributed to IDFGeo, a rainfall modeling tool. Ran statistical analysis of large historical datasets in R, fitted multiparametric probability distributions and built routines for spatial interpolation and coefficient estimation, in a team combining data analysis and web visualization.",
+            tags: ["R", "Shiny", "Statistics", "Geostatistics"], href: "https://gphidro.shinyapps.io/idfgeo/", linkLabel: "IDFGeo" }
+        ],
+        col: [
+          { when: "Apr 2017 — May 2023 · 6 years", what: "Bachelor's in Computer Engineering", where: "Federal University of Pelotas (UFPel)",
+            text: "Foundation in computer and software engineering: algorithms, data structures, object-oriented programming, backend and web fundamentals, and Git/GitHub. Experience with Python, TypeScript and C. Academic project building a chatbot with NLP using the Rasa framework.",
+            tags: ["Python", "TypeScript", "C", "Rasa"] }
+        ]
+      },
       tlDecisions: [
         { title: "Hand-written JWT", ctx: "Instead of an auth provider, I wrote token issuing, validation and refresh to understand the flow from the inside (header, payload, signature, access/refresh type).", trade: "More code and more surface for mistakes, in exchange for real command of the mechanism. Mitigated with auth tests.", ref: "ADR 0001" },
         { title: "404 instead of 403 for another user's resources", ctx: "A 403 confirms the resource exists. A 404 reveals nothing about what exists in the system.", trade: "Slightly less clarity for people debugging their own mistakes; better against information leakage.", ref: "ADR 0006" },

@@ -230,6 +230,42 @@ img { max-width: 100%; display: block; }
 .table-card td.m { font-family: var(--font-mono); color: var(--accent); }
 .table-card td.p { font-family: var(--font-mono); }
 
+/* ---- About page ---------------------------------------------------------- */
+
+.about-top { display: flex; flex-wrap: wrap; gap: 48px; padding: 64px 0; align-items: flex-start; }
+.about-top .about-text { flex: 1 1 480px; min-width: 0; }
+.about-top h1 { margin: 0 0 20px; font: 700 clamp(32px, 4.4vw, 48px)/1.1 var(--font-display); letter-spacing: -0.02em; }
+.about-top p { margin: 0 0 16px; font-size: 18px; color: var(--muted); }
+.about-top .photo { flex: 0 1 240px; }
+.about-top .photo-box { aspect-ratio: 1 / 1; }
+
+.timeline { display: flex; flex-direction: column; border-left: 2px solid var(--line); margin-left: 6px; }
+.tl-item { position: relative; padding: 0 0 32px 28px; }
+.tl-item::before {
+  content: ""; position: absolute; left: -8px; top: 6px; width: 14px; height: 14px;
+  border-radius: 50%; background: var(--accent); border: 3px solid var(--bg);
+}
+.tl-when { font: 13px var(--font-mono); color: var(--muted); }
+.tl-what { margin: 2px 0; font: 600 20px var(--font-display); letter-spacing: -0.02em; }
+.tl-where { color: var(--accent-ink); font-weight: 500; margin-bottom: 8px; }
+.tl-text { margin: 0 0 12px; color: var(--muted); max-width: 720px; }
+.tl-link { display: inline-block; margin-top: 8px; min-height: 44px; line-height: 44px; }
+
+.ai-grid { display: flex; flex-wrap: wrap; gap: 20px; align-items: flex-start; margin-bottom: 20px; }
+.ai-grid .ai-text { flex: 1 1 480px; min-width: 0; }
+.ai-grid .ai-text p:first-child { font-size: 18px; margin: 0 0 16px; }
+.ai-grid .ai-text p:last-child { font-size: 18px; margin: 0; color: var(--muted); }
+.ai-grid .card { flex: 1 1 360px; min-width: 0; }
+.ai-grid ul { margin: 0; padding-left: 20px; display: flex; flex-direction: column; gap: 10px; }
+.kicker { font: 12px var(--font-mono); color: var(--accent); margin-bottom: 12px; }
+.case h3 { margin: 0 0 20px; font: 600 22px var(--font-display); letter-spacing: -0.02em; }
+.case .options { flex: 2 1 400px; display: flex; flex-wrap: wrap; gap: 12px; }
+.case .options .box { flex: 1 1 180px; text-align: left; }
+.case .options .box.chosen { border-width: 2px; border-color: var(--accent); }
+.case .options .box span { display: block; font-weight: 400; color: var(--muted); }
+.case .arch { align-items: stretch; }
+.case .arch .arrow { align-self: center; }
+
 /* ---- Progress checklist -------------------------------------------------- */
 
 .progress { display: flex; flex-wrap: wrap; gap: 12px 32px; }
