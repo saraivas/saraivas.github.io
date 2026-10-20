@@ -1,0 +1,55 @@
+<!doctype html>
+<html lang="pt-BR" data-page="projects">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Projetos · Felipe Saraiva</title>
+  <meta name="description" content="Projetos públicos de Felipe Saraiva, com testes, CI e decisões registradas em ADRs.">
+  <link rel="canonical" href="https://saraivas.github.io/projects.html">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Sans:wght@400;500;600&family=Sora:wght@500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body>
+  <a class="skip" href="#main">Skip to content</a>
+
+  <header class="wrap">
+    <nav class="nav" aria-label="Main">
+      <a class="brand" href="index.html">felipe.saraiva</a>
+      <a href="index.html" data-i18n="nav.home">Início</a>
+      <a href="projects.html" aria-current="page" data-i18n="nav.projects">Projetos</a>
+      <a href="about.html" data-i18n="nav.about">Sobre</a>
+      <a href="stack.html" data-i18n="nav.stack">Stack</a>
+      <a href="contact.html" data-i18n="nav.contact">Contato</a>
+      <div class="lang" role="group" aria-label="Language">
+        <button class="seg" type="button" data-lang="pt" aria-pressed="true">PT</button>
+        <button class="seg" type="button" data-lang="en" aria-pressed="false">EN</button>
+      </div>
+    </nav>
+  </header>
+
+  <main id="main" class="wrap">
+    <section class="page-head">
+      <div class="eyebrow" data-i18n="projects.eyebrow">PROJETOS</div>
+      <h1 data-i18n="projects.title">Cada projeto é um repositório.</h1>
+      <p data-i18n="projects.lead"></p>
+    </section>
+
+    <div class="chips" id="chips" role="group" aria-label="Filter"></div>
+
+    <section class="section">
+      <div class="cards" id="proj-list"></div>
+    </section>
+  </main>
+
+  <footer class="footer wrap">
+    <span data-i18n="footer.note">felipe.saraiva · 2026</span>
+    <span>github.com/saraivas</span>
+  </footer>
+
+  <script src="assets/js/data.js"></script>
+  <script src="assets/js/i18n.js"></script>
+  <script src="assets/js/projects.js"></script>
+</body>
+</html>

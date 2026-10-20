@@ -1,0 +1,99 @@
+<!doctype html>
+<html lang="pt-BR" data-page="about">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Sobre · Felipe Saraiva</title>
+  <meta name="description" content="Trajetória de Felipe Saraiva: trabalho, estágio, pesquisa e faculdade, e como ele trabalha com IA.">
+  <link rel="canonical" href="https://saraivas.github.io/about.html">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Sans:wght@400;500;600&family=Sora:wght@500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body>
+  <a class="skip" href="#main">Skip to content</a>
+
+  <header class="wrap">
+    <nav class="nav" aria-label="Main">
+      <a class="brand" href="index.html">felipe.saraiva</a>
+      <a href="index.html" data-i18n="nav.home">Início</a>
+      <a href="projects.html" data-i18n="nav.projects">Projetos</a>
+      <a href="about.html" aria-current="page" data-i18n="nav.about">Sobre</a>
+      <a href="stack.html" data-i18n="nav.stack">Stack</a>
+      <a href="contact.html" data-i18n="nav.contact">Contato</a>
+      <div class="lang" role="group" aria-label="Language">
+        <button class="seg" type="button" data-lang="pt" aria-pressed="true">PT</button>
+        <button class="seg" type="button" data-lang="en" aria-pressed="false">EN</button>
+      </div>
+    </nav>
+  </header>
+
+  <main id="main" class="wrap">
+    <section class="about-top">
+      <div class="about-text">
+        <div class="eyebrow" data-i18n="about.eyebrow">SOBRE</div>
+        <h1 data-i18n="about.title"></h1>
+        <p data-i18n="about.p1"></p>
+        <p data-i18n="about.p2"></p>
+      </div>
+      <div class="photo">
+        <div class="photo-box">
+          <!-- Replace with: <img src="assets/img/felipe.jpg" alt="Felipe Saraiva"> -->
+          <div class="photo-note" data-i18n="hero.photo">[FOTO PROFISSIONAL]</div>
+        </div>
+        <div class="photo-caption" data-i18n="hero.caption"></div>
+      </div>
+    </section>
+
+    <section class="section" aria-labelledby="tl-title">
+      <h2 class="section-title" id="tl-title" data-i18n="about.tlTitle">Trajetória</h2>
+      <div class="chips" id="tabs" role="group" aria-label="Timeline"></div>
+      <div class="timeline" id="timeline"></div>
+    </section>
+
+    <section class="section" aria-labelledby="ai-title">
+      <h2 class="section-title" id="ai-title" data-i18n="ai.title">Como eu trabalho com IA</h2>
+      <div class="ai-grid">
+        <div class="ai-text">
+          <p data-i18n="ai.p1"></p>
+          <p data-i18n="ai.p2"></p>
+        </div>
+        <div class="card">
+          <div class="kicker" data-i18n="ai.limTitle">O QUE A IA NÃO FAZ NO MEU FLUXO</div>
+          <ul id="limits"></ul>
+        </div>
+      </div>
+
+      <div class="card case">
+        <div class="kicker" data-i18n="case.tag">UM CASO REAL</div>
+        <h3 data-i18n="case.title"></h3>
+        <div class="arch">
+          <div class="box" style="flex:1 1 200px" data-i18n="case.problem"></div>
+          <span class="arrow" aria-hidden="true">→</span>
+          <div class="options">
+            <div class="box"><strong data-i18n="case.o1"></strong><span data-i18n="case.o1a"></span><span data-i18n="case.o1b"></span></div>
+            <div class="box chosen"><strong data-i18n="case.o2"></strong><span data-i18n="case.o2a"></span><span data-i18n="case.o2b"></span></div>
+          </div>
+        </div>
+        <div class="arch">
+          <div class="box hi" data-i18n="case.dec"></div><span class="arrow" aria-hidden="true">→</span>
+          <div class="box">ADR 0006</div><span class="arrow" aria-hidden="true">→</span>
+          <div class="box">test_user_cannot_*</div><span class="arrow" aria-hidden="true">→</span>
+          <div class="box" data-i18n="case.ci"></div>
+        </div>
+        <div style="margin-top:16px"><a class="link-accent" href="https://github.com/saraivas/tasklane-api/tree/main/docs/adr" rel="noopener"><span data-i18n="case.link">Ver os ADRs</span> ↗</a></div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer wrap">
+    <span data-i18n="footer.note">felipe.saraiva · 2026</span>
+    <span>github.com/saraivas</span>
+  </footer>
+
+  <script src="assets/js/data.js"></script>
+  <script src="assets/js/i18n.js"></script>
+  <script src="assets/js/about.js"></script>
+</body>
+</html>
