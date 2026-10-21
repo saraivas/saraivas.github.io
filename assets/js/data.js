@@ -55,7 +55,7 @@ window.I18N = {
     "tl.mRole": "PAPEL",
     "tl.vRole": "Projeto individual",
     "tl.mTests": "TESTES",
-    "tl.vTests": "26 automatizados",
+    "tl.vTests": "46 automatizados",
     "tl.mDeploy": "DEPLOY",
     "tl.archTitle": "Arquitetura",
     "tl.deploy": "Deploy (Render)",
@@ -67,10 +67,17 @@ window.I18N = {
     "tl.ciText":
       "Uma dependência instalada localmente nunca foi declarada. Na minha máquina funcionava; num ambiente limpo, não. Foi exatamente para isso que o CI serviu.",
     "tl.apiTitle": "Endpoints",
+    "tl.limTitle": "Limitações conhecidas",
     "tl.cDesc": "Descrição",
     "tl.btnRepo": "Repositório",
-    "tl.btnDemo": "Demo",
+    "tl.btnDemo": "Swagger (demo)",
     "tl.btnPost": "Post no dev.to",
+    "tl.flowTitle": "Como funciona",
+    "tl.flowAuth": "Fluxo de autenticação: login, requisição protegida e refresh",
+    "tl.flowPatch": "O que acontece em PATCH /tasks/{id}",
+    "tl.flowNote": "Diagramas em inglês, iguais aos do README do repositório, que descrevem o código atual.",
+    "tl.flowLink": "Ver os diagramas no README",
+    "tl.demoNote": "O demo roda no plano gratuito do Render: a primeira requisição depois de um tempo parado pode levar alguns segundos.",
     "meta.about.title": "Sobre · Felipe Saraiva",
     "meta.about.desc":
       "Trajetória de Felipe Saraiva: trabalho, estágio, pesquisa e faculdade, e como ele trabalha com IA.",
@@ -233,24 +240,46 @@ window.I18N = {
         },
         {
           title: "Dependência fixada que escorregou (bcrypt)",
-          ctx: "O passlib quebra com bcrypt 4.1 ou superior, então fixei bcrypt==4.0.1. Uma instalação posterior subiu para 5.0.0 sem aviso e só percebi na revisão.",
+          ctx: "O passlib quebra com bcrypt 4.1 ou superior, então fixei bcrypt==4.0.1. Uma instalação local subiu o bcrypt além da 4.0.1 sem eu decidir isso, e só percebi na revisão.",
           trade:
-            "Fixar versão não basta sem checagem explícita. Documentado e re-fixado.",
+            "Fixar versão não basta sem checagem explícita. Documentado e re-fixado em 4.0.1.",
           ref: "ADR 0008",
         },
         {
-          title: "Paginação offset/limit com total em uma query",
-          ctx: "Listagem com filtro por status. O total vem junto na mesma consulta com COUNT(*) OVER(), sem segunda ida ao banco.",
+          title: "Paginação offset/limit",
+          ctx: "Listagem com filtro por status. O total vem de uma consulta de contagem separada, sobre o mesmo filtro; limit tem teto de 100 e há índice composto (user_id, created_at).",
           trade:
-            "Simples e boa para este volume; em listas enormes ou mutáveis, paginação por cursor seria mais estável.",
+            "Simples e boa para este volume; custa uma segunda consulta por requisição e, em listas enormes ou mutáveis, paginação por cursor seria mais estável.",
           ref: "ADR 0009",
         },
+        {
+          title: "Refresh com limite absoluto de sessão",
+          ctx: "O ADR 0002 descrevia refresh deslizante, mas o código não renovava o refresh token. Corrigi o código: /auth/refresh recebe o token no corpo (nunca na URL) e devolve um par novo; a janela de 7 dias desliza, e a sessão acaba 30 dias após o login (claim auth_time), sem estado no servidor.",
+          trade:
+            "Os tokens não são de uso único e uma sessão não pode ser revogada; detectar reuso exigiria um repositório de tokens no servidor. Está documentado como limitação.",
+          ref: "ADR 0010",
+        },
+        {
+          title: "Testes só rodam em banco _test",
+          ctx: "Os testes recriam e apagam todas as tabelas a cada teste, mas liam a mesma DATABASE_URL da aplicação: com um .env local, o pytest apagava as tabelas do banco de desenvolvimento. Agora leem TEST_DATABASE_URL e se recusam a rodar se o nome do banco não terminar em _test.",
+          trade:
+            "Um passo a mais de setup (criar o banco de teste). Em troca, não dá para apagar o banco errado por engano.",
+          ref: "ADR 0007 (nota de atualização)",
+        },
+      ],
+      tlLimits: [
+        "Refresh tokens não são de uso único e uma sessão não pode ser revogada (ADR 0010).",
+        "Sem rate limiting.",
+        "Acesso ao banco é síncrono (Session do SQLAlchemy).",
+        "As migrations de produção são rodadas à mão; a imagem Docker não roda migrations ao iniciar e executa como root.",
+        "/health não verifica a conexão com o banco.",
       ],
       tlApi: [
         ["POST", "/auth/register", "Cria usuário", "Não"],
         ["POST", "/auth/login", "Access + refresh token", "Não"],
-        ["POST", "/auth/refresh", "Renova o access token", "Refresh"],
+        ["POST", "/auth/refresh", "Novos access + refresh (token no corpo JSON)", "Refresh"],
         ["GET", "/tasks", "Lista paginada com filtro", "Sim"],
+        ["GET", "/tasks/{id}", "Busca uma tarefa", "Sim"],
         ["POST", "/tasks", "Cria tarefa", "Sim"],
         ["PATCH", "/tasks/{id}", "Atualiza tarefa", "Sim"],
         ["DELETE", "/tasks/{id}", "Remove tarefa", "Sim"],
@@ -391,7 +420,7 @@ window.I18N = {
           d: "Defino o que precisa ser provado: isolamento, auth, validação.",
           a: "Ajuda a escrever e a rodar a suíte.",
           v: "Fecho as lacunas que os meus próprios ADRs apontam.",
-          e: "26 testes; test_user_cannot_* prova o isolamento entre usuários.",
+          e: "46 testes; test_user_cannot_* cobre o isolamento entre usuários.",
         },
         {
           l: "Revisão",
@@ -463,7 +492,7 @@ window.I18N = {
     "tl.mRole": "ROLE",
     "tl.vRole": "Solo project",
     "tl.mTests": "TESTS",
-    "tl.vTests": "26 automated",
+    "tl.vTests": "46 automated",
     "tl.mDeploy": "DEPLOY",
     "tl.archTitle": "Architecture",
     "tl.deploy": "Deploy (Render)",
@@ -475,10 +504,17 @@ window.I18N = {
     "tl.ciText":
       "A dependency installed locally was never declared. It worked on my machine and broke in a clean environment. That's exactly what CI is for.",
     "tl.apiTitle": "Endpoints",
+    "tl.limTitle": "Known limitations",
     "tl.cDesc": "Description",
     "tl.btnRepo": "Repository",
-    "tl.btnDemo": "Demo",
+    "tl.btnDemo": "Swagger (demo)",
     "tl.btnPost": "dev.to post",
+    "tl.flowTitle": "How it works",
+    "tl.flowAuth": "Authentication flow: login, protected request and refresh",
+    "tl.flowPatch": "What happens on PATCH /tasks/{id}",
+    "tl.flowNote": "These are the same diagrams as in the repository README, which describe the current code.",
+    "tl.flowLink": "See the diagrams in the README",
+    "tl.demoNote": "The demo runs on the Render free tier: the first request after an idle period can take a few seconds.",
     "meta.about.title": "About · Felipe Saraiva",
     "meta.about.desc":
       "Felipe Saraiva's background: work, internship, research and college, and how he works with AI.",
@@ -640,24 +676,46 @@ window.I18N = {
         },
         {
           title: "A pinned dependency that drifted (bcrypt)",
-          ctx: "passlib breaks with bcrypt 4.1 or newer, so I pinned bcrypt==4.0.1. A later install bumped it to 5.0.0 silently and I only noticed in review.",
+          ctx: "passlib breaks with bcrypt 4.1 or newer, so I pinned bcrypt==4.0.1. A local install bumped bcrypt past 4.0.1 without me deciding that, and I only noticed in review.",
           trade:
-            "Pinning is not enough without an explicit check. Documented and re-pinned.",
+            "Pinning is not enough without an explicit check. Documented and re-pinned to 4.0.1.",
           ref: "ADR 0008",
         },
         {
-          title: "Offset/limit pagination with the total in one query",
-          ctx: "Listing with a status filter. The total comes back in the same query using COUNT(*) OVER(), with no second round trip.",
+          title: "Offset/limit pagination",
+          ctx: "Listing with a status filter. The total comes from a separate count query over the same filter; limit is capped at 100 and there is a composite (user_id, created_at) index.",
           trade:
-            "Simple and fine at this volume; for huge or changing lists, cursor pagination would be more stable.",
+            "Simple and fine at this volume; it costs a second query per request and, for huge or changing lists, cursor pagination would be more stable.",
           ref: "ADR 0009",
         },
+        {
+          title: "Refresh with an absolute session limit",
+          ctx: "ADR 0002 described sliding refresh, but the code did not renew the refresh token. I fixed the code: /auth/refresh takes the token in the body (never in the URL) and returns a new pair; the 7-day window slides, and the session ends 30 days after login (auth_time claim), with no server-side state.",
+          trade:
+            "Tokens are not single-use and a session cannot be revoked; detecting reuse would need a server-side token store. This is documented as a limitation.",
+          ref: "ADR 0010",
+        },
+        {
+          title: "Tests only run against a _test database",
+          ctx: "The tests recreate and drop every table on each test, but read the same DATABASE_URL as the app: with a local .env, pytest dropped the development database tables. They now read TEST_DATABASE_URL and refuse to run unless the database name ends with _test.",
+          trade:
+            "One more setup step (creating the test database). In exchange, the wrong database cannot be wiped by accident.",
+          ref: "ADR 0007 (update note)",
+        },
+      ],
+      tlLimits: [
+        "Refresh tokens are not single-use and a session cannot be revoked (ADR 0010).",
+        "No rate limiting.",
+        "Database access is synchronous (SQLAlchemy Session).",
+        "Production migrations are run by hand; the Docker image does not run migrations on start and runs as root.",
+        "/health does not check the database connection.",
       ],
       tlApi: [
         ["POST", "/auth/register", "Create a user", "No"],
         ["POST", "/auth/login", "Access + refresh token", "No"],
-        ["POST", "/auth/refresh", "Renew the access token", "Refresh"],
+        ["POST", "/auth/refresh", "New access + refresh (token in the JSON body)", "Refresh"],
         ["GET", "/tasks", "Paginated, filterable list", "Yes"],
+        ["GET", "/tasks/{id}", "Get a task", "Yes"],
         ["POST", "/tasks", "Create a task", "Yes"],
         ["PATCH", "/tasks/{id}", "Update a task", "Yes"],
         ["DELETE", "/tasks/{id}", "Delete a task", "Yes"],
@@ -798,7 +856,7 @@ window.I18N = {
           d: "I define what must be proven: isolation, auth, validation.",
           a: "Helps write and run the suite.",
           v: "I close the gaps my own ADRs point out.",
-          e: "26 tests; test_user_cannot_* proves isolation between users.",
+          e: "46 tests; test_user_cannot_* covers isolation between users.",
         },
         {
           l: "Review",
@@ -824,7 +882,7 @@ window.SITE = {
   tasklane: {
     repo: "https://github.com/saraivas/tasklane-api",
     adrs: "https://github.com/saraivas/tasklane-api/tree/main/docs/adr",
-    demo: "", // e.g. the Render URL, when you want to show it
+    demo: "https://tasklane-api-xtxy.onrender.com/docs", // Swagger on Render (free tier: first request may be slow)
     post: "", // e.g. the dev.to post URL
   },
   /* Contact links. An empty value hides that row. */
