@@ -343,3 +343,10 @@ img { max-width: 100%; display: block; }
   html { scroll-behavior: auto; }
   .proj { transition: none; }
 }
+
+/* tasklane page: pre-rendered diagrams (kept in sync with the tasklane-api README) */
+.diagram { margin: 0 0 28px; text-align: center; }
+.diagram img { display: block; max-width: 100%; height: auto; margin: 0 auto; background: #fff; border: 1px solid var(--line); border-radius: 8px; }
+.diagram img[src*="patch-flow"] { max-width: min(100%, 420px); }
+.diagram figcaption { margin-top: 10px; font-size: 14px; color: var(--muted); }
+.note { font-size: 14px; color: var(--muted); }

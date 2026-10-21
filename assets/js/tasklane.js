@@ -64,7 +64,13 @@
     });
   }
 
-  function renderAll() { renderActions(); renderDecisions(); renderApi(); }
+  function renderLimits() {
+    var box = document.getElementById("limits");
+    box.textContent = "";
+    window.getDict().lists.tlLimits.forEach(function (t) { box.appendChild(el("li", "", t)); });
+  }
+
+  function renderAll() { renderActions(); renderDecisions(); renderApi(); renderLimits(); }
 
   document.addEventListener("langchange", renderAll);
   renderAll();

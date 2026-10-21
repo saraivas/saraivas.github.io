@@ -38,6 +38,7 @@
       </div>
       <p data-i18n="tl.lead" style="margin-bottom:24px"></p>
       <div class="actions" id="actions" style="margin-bottom:0"></div>
+      <p class="note" data-i18n="tl.demoNote" style="margin-top:16px"></p>
     </section>
 
     <section class="section">
@@ -62,6 +63,24 @@
           <div class="box hi">GitHub Actions<small>pytest + Postgres</small></div><span class="arrow" aria-hidden="true">→</span>
           <div class="box" data-i18n="tl.deploy">Deploy (Render)</div>
         </div>
+      </div>
+    </section>
+
+    <section class="section" aria-labelledby="flow-title">
+      <h2 class="section-title" id="flow-title" data-i18n="tl.flowTitle">Como funciona</h2>
+      <div class="card">
+        <figure class="diagram">
+          <img src="assets/img/tasklane/auth-flow.svg" width="983" height="1164" loading="lazy"
+               alt="Sequence diagram: login returns an access token (30 min) and a refresh token (7 days); a protected request decodes the access token and queries only that user's tasks; refresh checks the token type, the 30-day session limit and that the user exists, then returns a new pair.">
+          <figcaption data-i18n="tl.flowAuth">Fluxo de autenticação: login, requisição protegida e refresh</figcaption>
+        </figure>
+        <figure class="diagram">
+          <img src="assets/img/tasklane/patch-flow.svg" width="587" height="1556" loading="lazy"
+               alt="Flowchart of PATCH /tasks/{id}: 401 without a valid token, 422 for an invalid body, 404 when the task is not found for the current user (also when it belongs to someone else), otherwise only the sent fields are updated and the task is returned with 200.">
+          <figcaption data-i18n="tl.flowPatch">O que acontece em PATCH /tasks/{id}</figcaption>
+        </figure>
+        <p class="note"><span data-i18n="tl.flowNote"></span>
+          <a href="https://github.com/saraivas/tasklane-api#how-it-works" rel="noopener" data-i18n="tl.flowLink">Ver os diagramas no README</a> ↗</p>
       </div>
     </section>
 
@@ -92,6 +111,11 @@ CI: passed</pre>
           <tbody id="api-rows"></tbody>
         </table>
       </div>
+    </section>
+
+    <section class="section" aria-labelledby="lim-title">
+      <h2 class="section-title" id="lim-title" data-i18n="tl.limTitle">Limitações conhecidas</h2>
+      <div class="card"><ul id="limits"></ul></div>
     </section>
   </main>
 
